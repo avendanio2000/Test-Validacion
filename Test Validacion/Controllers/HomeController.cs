@@ -19,7 +19,7 @@ namespace Test_Validacion.Controllers
         public ActionResult Index(LoginDataModel logingDataModel)
         {
             if (ModelState.IsValid)
-                return RedirectToAction("Ok");
+                return RedirectToAction("About");
             else
                 return View(logingDataModel);
         }
@@ -31,6 +31,7 @@ namespace Test_Validacion.Controllers
 
             return View();
         }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
