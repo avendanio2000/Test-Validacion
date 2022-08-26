@@ -6,29 +6,30 @@
 
 <h2>LoginView</h2>
 
-<div>
+<div class="row">
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <div>
+        <div class="col-md-6 col-md-offset-2 form-horizontal">
             @Html.LabelFor(x => x.Email)
-            @Html.TextBoxFor(x => x.Email)
-            @Html.ValidationMessageFor(x => x.Email, null)
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", autofocus = "autofocus" })
+            @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
             <br />
 
             @Html.LabelFor(x => x.Password)
-            @Html.PasswordFor(x => x.Password)
-            @Html.ValidationMessageFor(x => x.Password, null)
+            @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger"})
             <br />
 
             @Html.LabelFor(x => x.RemeberMe)
-            @Html.CheckBoxFor(x => x.RemeberMe)
+            @Html.CheckBoxFor(x => x.RemeberMe, new { @class = ""})
             <br />
 
-            <button type="submit">
+            <button class="btn btn-primary" type="submit">
                 Iniciar sesion
             </button>
         </div>
+
     }
 </div>
 
