@@ -1,0 +1,37 @@
+﻿@model Test_Validacion.Models.LoginDataModel
+
+@{
+    ViewBag.Title = "Login Titulo Navegador";
+}
+
+<h2>LoginView</h2>
+
+<div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.Email, null)
+            <br />
+
+            @Html.LabelFor(x => x.Password)
+            @Html.PasswordFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password, null)
+            <br />
+
+            @Html.LabelFor(x => x.RemeberMe)
+            @Html.CheckBoxFor(x => x.RemeberMe)
+            <br />
+
+            <button type="submit">
+                Iniciar sesion
+            </button>
+        </div>
+    }
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
